@@ -1,0 +1,27 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+  color: var(--black);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --black: #3B434E;
+  --white: white;
+  --primary: #7653FC;
+  --red: #FC8360;
+  --green: #1DC376;
+  --green-light: #C8F8E4;
+  --font-family: 'Noto Sans KR', sans-serif;
+
+}
