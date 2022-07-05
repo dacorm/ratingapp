@@ -1,0 +1,23 @@
+.psmall {
+    margin: 0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: var(--black)
+}
+
+.pmedium {
+    margin: 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--black)
+}
+
+.phigh {
+    margin: 0;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 29px;
+    color: var(--black)
+}

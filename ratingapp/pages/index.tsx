@@ -1,10 +1,16 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import {Htag} from "../components/Htag/Htag";
+import {Button} from "../components";
+import {Ptag} from "../components/Ptag/Ptag";
+import {Tag} from "../components";
 
 export default function Home(): JSX.Element {
   return (
-    <div>
-      privet
-    </div>
+    <>
+      <Htag tag='h1'>Текст</Htag>
+      <Button appearance='primary' arrow='right'>Кнопка</Button>
+      <Ptag>Средний текст</Ptag>
+    </>
   )
 }

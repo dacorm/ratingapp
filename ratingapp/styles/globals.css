@@ -19,9 +19,10 @@ a {
   --black: #3B434E;
   --white: white;
   --primary: #7653FC;
+  --primary-hover: #6344df;
   --red: #FC8360;
   --green: #1DC376;
   --green-light: #C8F8E4;
   --font-family: 'Noto Sans KR', sans-serif;
-
+  --gray-light: #EBEBEB;
 }
