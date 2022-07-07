@@ -28,7 +28,7 @@
     grid-area: footer;
 }
 
-@media (max-width: 765px) {
+@media screen and (max-width: 765px) {
     .wrapper {
         grid-template-columns: minmax(320px, 1fr);
         grid-template-areas:
@@ -38,7 +38,7 @@
     }
 
     .sidebar {
-        display: none;
+        display: none !important;
     }
 
     .header {
