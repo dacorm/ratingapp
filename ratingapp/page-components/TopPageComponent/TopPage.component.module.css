@@ -6,14 +6,32 @@
     gap: 20px;
 }
 
-.wrapper {
-    margin-top: 40px;
-}
-
 .hhTitle {
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: baseline;
     justify-items: left;
     gap: 20px;
+}
+
+.seo h1 {
+    margin: 50px 0 25px 0;
+    padding: 0;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 35px;
+}
+
+.seo h2 {
+    margin: 50px 0 25px 0;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 30px
+}
+
+.seo h3 {
+    margin: 50px 0 25px 0;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 27px;
 }
