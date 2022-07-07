@@ -25,5 +25,6 @@ a {
   --green-light: #C8F8E4;
   --font-family: 'Noto Sans KR', sans-serif;
   --gray-light: #EBEBEB;
-  --gray-dark: #787085
+  --gray-dark: #787085;
+  --gray: #A4A4A4;
 }

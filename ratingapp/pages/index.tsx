@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import {Htag} from "../components/Htag/Htag";
-import {Button, Rating} from "../components";
+import {Button, Input, Rating, Textarea} from "../components";
 import {Ptag} from "../components/Ptag/Ptag";
 import {Tag} from "../components";
 import {useState} from "react";
@@ -19,6 +19,8 @@ function Home({ menu }: HomeProps): JSX.Element {
       <Button appearance='primary' arrow='right'>Кнопка</Button>
       <Ptag>Средний текст</Ptag>
         <Rating rating={rating} isEditable={true} setRating={setRating}/>
+        <Input placeholder='test' />
+        <Textarea placeholder='test' />
     </>
   )
 }
