@@ -8,14 +8,28 @@ import {declOfNum, priceRu} from "../../helpers/helpers";
 import {Divider} from "../Divider/Divider";
 import Image from 'next/image';
 import cn from "classnames";
-import {useRef, useState} from "react";
+import {ForwardedRef, forwardRef, useRef, useState} from "react";
 import {Review} from "../Review/Review";
 import {ReviewForm} from "../ReviewForm/ReviewForm";
+import { motion } from 'framer-motion';
 
 
-export const Product = ({ product, className, ...props }: ProductProps): JSX.Element => {
+export const Product = motion(forwardRef(({ product, className, ...props }: ProductProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
     const [isReviewOpened, setIsReviewOpened] = useState<boolean>(false);
     const reviewRef = useRef<HTMLDivElement>(null);
+
+    const variants = {
+        visible: {
+            opacity: 1,
+            height: 'auto',
+            padding: 30,
+        },
+        hidden: {
+          opacity: 0,
+          height: 0,
+          padding: 0,
+        },
+    }
 
     const scrollToReview = () => {
         if (!reviewRef.current) return;
@@ -72,10 +86,12 @@ export const Product = ({ product, className, ...props }: ProductProps): JSX.Ele
                 <Button onClick={() => setIsReviewOpened(!isReviewOpened)} appearance='ghost' arrow={isReviewOpened ? 'down' : 'right'} className={styles.reviewButton}>Читать отзывы</Button>
             </div>
         </Card>
-        <Card color='blue' className={cn(styles.reviews, {
-            [styles.opened]: isReviewOpened,
-            [styles.closed]: !isReviewOpened
-        })} ref={reviewRef}>
+            <motion.div
+                animate={isReviewOpened ? 'visible' : 'hidden'}
+                variants={variants}
+                initial='hidden'
+            >
+        <Card color='blue' className={styles.reviews} ref={reviewRef}>
             {product.reviews.map(r => (
                 <div key={r._id}>
                 <Review review={r} className={styles.review}/>
@@ -84,6 +100,7 @@ export const Product = ({ product, className, ...props }: ProductProps): JSX.Ele
             ))}
             <ReviewForm productId={product._id} />
         </Card>
+            </motion.div>
         </div>
     )
-};
+}));
