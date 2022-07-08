@@ -15,3 +15,18 @@
 .textarea::placeholder {
     color: var(--gray);
 }
+
+.error {
+    border: 1px solid var(--red);
+}
+
+.errorMessage {
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    color: var(--red);
+}
+
+.textareaWrapper {
+    position: relative;
+}

@@ -140,6 +140,10 @@
     padding: 30px;
 }
 
+.rateTitle a {
+    color: var(--primary);
+}
+
 .review {
     margin-bottom: 30px;
 }

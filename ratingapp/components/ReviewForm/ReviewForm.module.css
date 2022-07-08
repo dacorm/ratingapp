@@ -21,11 +21,23 @@
     margin-left: 15px;
 }
 
-.success {
-    background: var(--green-light);
+.panel {
     padding: 20px;
     position: relative;
     margin-top: 20px;
+    border-radius: 5px;
+}
+
+.success {
+    background: var(--green-light);
+}
+
+.error {
+    background: var(--red-light);
+}
+
+.error .close path {
+    stroke: var(--red);
 }
 
 .successTitle {
