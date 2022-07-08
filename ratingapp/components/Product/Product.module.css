@@ -1,6 +1,6 @@
 .product {
     display: grid;
-    margin-bottom: 30px;
+    margin-top: 30px;
     padding: 30px;
     grid-template-columns: [start] 70px [logoend] 30px [titleStart] calc(50% - 100px) [middle] 1fr [priceStart] auto [priceEnd] 40px [creditStart] auto [creditEnd] 40px [rateStart] auto [end];
 }
@@ -22,7 +22,7 @@
     grid-column: creditStart / creditEnd;
 }
 
-.rating, .ratingTitle {
+.rating, .rateTitle {
     grid-column: rateStart / end;
 }
 
@@ -64,7 +64,7 @@
     align-self: flex-end;
 }
 
-.priceTitle, .creditTitle, .ratingTitle {
+.priceTitle, .creditTitle, .rateTitle {
     font-weight: 300;
     font-size: 14px;
     line-height: 19px;
@@ -108,4 +108,174 @@
 .advBlock {
     font-size: 16px;
     line-height: 22px;
+}
+
+.characteristics {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    padding-right: 60px;
+    font-size: 16px;
+    line-height: 32px;
+    gap: 10px;
+}
+
+.characteristicsName {
+    font-weight: bold;
+}
+
+
+.characteristicsDots {
+    border-bottom: 1px dashed var(--gray-light);
+    margin-bottom: 5px;
+}
+
+.closed {
+    overflow: hidden;
+    max-height: 0;
+    padding: 0;
+}
+
+.opened {
+    height: auto;
+    padding: 30px;
+}
+
+.review {
+    margin-bottom: 30px;
+}
+
+@media screen and (max-width: 1320px) {
+    .product {
+        grid-template-columns: 70px 30px auto 40px auto 40px 1fr;
+        grid-template-areas:
+                'logo . title title title title title'
+                'logo . tags tags tags tags tags'
+                'price price price . credit . rating'
+                'priceTitle priceTitle priceTitle . creditTitle . rateTitle'
+                'hr hr hr hr hr hr hr'
+                'description description description description description description description'
+                'feature feature feature feature feature feature feature'
+                'advBlock advBlock advBlock advBlock advBlock advBlock advBlock'
+                'hr2 hr2 hr2 hr2 hr2 hr2 hr2'
+                'actions actions actions actions actions actions actions'
+    ;
+    }
+
+    .logo {
+        grid-area: logo;
+        margin-bottom: 20px;
+    }
+
+    .title {
+        grid-area: title;
+    }
+
+    .tags {
+        grid-area: tags;
+    }
+
+    .price {
+        grid-area: price;
+    }
+
+    .credit {
+        grid-area: credit;
+    }
+
+    .rating {
+        grid-area: rating;
+    }
+
+    .priceTitle {
+        grid-area: priceTitle;
+    }
+
+    .creditTitle {
+        grid-area: creditTitle;
+    }
+
+    .rateTitle {
+        grid-area: rateTitle;
+    }
+
+    .line {
+        grid-area: hr;
+    }
+
+    .description {
+        grid-area: description;
+    }
+
+    .features {
+        grid-area: feature;
+        margin-bottom: 20px;
+    }
+
+    .advBlock {
+        grid-area: advBlock;
+    }
+
+    .line2 {
+        grid-area: hr2;
+    }
+
+    .actions {
+        grid-area: actions;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .product {
+        grid-template-columns: 70px 30px 1fr;
+        grid-template-areas:
+			"logo . title"
+			"logo . tags"
+			"priceTitle priceTitle price"
+			"creditTitle creditTitle credit"
+			"rateTitle rateTitle rating"
+			"hr hr hr"
+			"description description description"
+			"feature feature feature"
+			"advBlock advBlock advBlock"
+			"hr2 hr2 hr2"
+			"actions actions actions";
+    }
+
+    .price {
+        margin-bottom: 10px;
+    }
+
+    .credit {
+        margin-bottom: 10px;
+    }
+
+    .rating {
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .product {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+			"logo"
+			"title"
+			"tags"
+			"price"
+			"priceTitle"
+			"credit"
+			"creditTitle"
+			"rating"
+			"rateTitle"
+			"hr"
+			"description"
+			"feature"
+			"advBlock"
+			"hr2"
+			"actions";
+    }
+
+    .reviewButton {
+        margin: 10px 0 0 0;
+    }
 }
