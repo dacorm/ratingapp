@@ -3,3 +3,9 @@
     align-content: start;
     gap: 20px;
 }
+
+@media screen and (max-width: 765px) {
+    .logo {
+        display: none;
+    }
+}
